@@ -1,5 +1,5 @@
 !function () {
-    var duration = 50
+    var duration = 10
     $('.actions').on('click', 'button', function (e) {
         let $button = $(e.currentTarget) // button
         let speed = $button.attr('data-speed')
@@ -36,42 +36,43 @@
     }
 
     let code = `
-   .preview {
+       .preview {
       background: #FEE433;
       border-top-left-radius: 100px;
       border-top-right-radius: 100px;
     }
+
     .nose {
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 12px;
-      border-color: black transparent transparent;
-      border-radius: 11px;
       position: absolute;
       left: 50%;
       top: 28px;
       margin-left: -12px;
+      width: 0;
+      height: 0;
+      border: 12px solid transparent;
+      border-top-color: black;
+      border-radius: 11px;
     }
+
     .eye {
+      position: absolute;
       width: 49px;
       height: 49px;
       background: #2E2E2E;
-      position: absolute;
       border-radius: 50%;
       border: 2px solid #000000;
     }
 
     .eye::before {
-      content: '';
+      position: absolute;
+      left: 6px;
+      top: -1px;
       display: block;
       width: 24px;
       height: 24px;
+      content: '';
       background: white;
-      position: absolute;
       border-radius: 50%;
-      left: 6px;
-      top: -1px;
       border: 2px solid #000;
     }
 
@@ -86,31 +87,31 @@
     }
 
     .face {
+      position: absolute;
+      top: 85px;
       width: 68px;
       height: 68px;
       background: #FC0D1C;
       border: 2px solid black;
       border-radius: 50%;
-      position: absolute;
-      top: 85px;
     }
 
     .face.left {
       right: 50%;
-      margin-right: 116px;
+      margin-right: 110px;
     }
 
     .face.right {
       left: 50%;
-      margin-left: 116px;
+      margin-left: 110px;
     }
 
     .upperLip {
+      position: absolute;
+      top: 50px;
       height: 25px;
       width: 80px;
       border: 2px solid black;
-      position: absolute;
-      top: 50px;
       background: #FDE348;
     }
 
@@ -131,35 +132,35 @@
     }
 
     .lowerLip-wrapper {
-      bottom: 0;
       position: absolute;
+      bottom: 0;
       left: 50%;
       margin-left: -150px;
       height: 110px;
-      overflow: hidden;
       width: 300px;
+      overflow: hidden;
     }
 
     .lowerLip {
+      position: absolute;
       height: 3500px;
       width: 300px;
       background: #990513;
       border-radius: 200px/2000px;
       border: 2px solid black;
-      position: absolute;
       bottom: 0;
       overflow: hidden;
     }
 
     .lowerLip::after {
-      content: '';
       position: absolute;
+      margin-left: -50px;
+      left: 50%;
       bottom: -20px;
+      content: '';
       width: 100px;
       height: 100px;
       background: #FC4A62;
-      left: 50%;
-      margin-left: -50px;
       border-radius: 50px;
     }
 
@@ -185,6 +186,21 @@
       transform: rotate(20deg);
     }
 
+    .hand {
+      position: absolute;
+      left: 25%;
+      bottom: -10%;
+      height: 0;
+      width: 25px;
+      border-top-right-radius: 200px;
+      border-top-left-radius: 200px;
+      border-bottom: 130px solid #555;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      transform: rotate(80deg);
+      overflow: hidden;
+    }
+
     #heart {
       position: absolute;
       bottom: 8px;
@@ -195,10 +211,9 @@
     }
 
     #heart::before, #heart::after {
-      content: "";
       position: absolute;
-      left: 40px;
       top: 0;
+      content: "";
       width: 40px;
       height: 64px;
       background: #FC4A62;
@@ -206,6 +221,7 @@
     }
 
     #heart::before {
+      left: 40px;
       transform: rotate(-45deg);
       transform-origin: 0 100%;
     }
@@ -228,14 +244,17 @@
         transform: scale(1);
       }
     }
-/*
- *
- * 好了好了，这只皮卡丘就送给你啦
- *
- *
- *
- *
- */
+
+    /*
+     *
+     * 好了好了，这只皮卡丘就送给你啦
+     * 么么哒(≖ ‿ ≖)✧
+     *
+     *
+     *
+     *
+     *
+     */
 `
     writeCode('', code)
 
