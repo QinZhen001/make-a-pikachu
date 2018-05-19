@@ -1,5 +1,5 @@
 !function () {
-    var duration = 10
+    var duration = 30
     $('.actions').on('click', 'button', function (e) {
         let $button = $(e.currentTarget) // button
         let speed = $button.attr('data-speed')
@@ -10,7 +10,7 @@
                 duration = 100
                 break
             case 'normal':
-                duration = 50
+                duration = 30
                 break
             case 'fast':
                 duration = 10
@@ -36,7 +36,7 @@
     }
 
     let code = `
-       .preview {
+    .preview {
       background: #FEE433;
       border-top-left-radius: 100px;
       border-top-right-radius: 100px;
