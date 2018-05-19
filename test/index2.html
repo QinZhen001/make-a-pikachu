@@ -5,7 +5,7 @@
   <title>画一只皮卡丘给你看</title>
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="../css/default.css">
   <style id="styleTag"></style>
 
   <style>
@@ -257,11 +257,28 @@
   </div>
 </div>
 <div class="actions">
-  <button data-speed="slow">慢速</button>
+  <button id="test" data-speed="slow">慢速</button>
   <button data-speed="normal" class="active">中速</button>
   <button data-speed="fast">快速</button>
+
+  <audio id="myAudio" src="../music/July.mp3" autoplay="autoplay"></audio>
 </div>
+
 <!--<script src="./vendor/jquery.min.js"></script>-->
-<script src="./js/main.js"></script>
+<script src="../js/main.js"></script>
 </body>
+
+<script>
+    var btn = document.getElementById('test')
+    var audio = document.getElementById('myAudio')
+   audio.volume = 0.2
+    btn.onclick = function () {
+        if(audio.paused){
+            audio.play()
+        }else{
+            audio.pause()
+        }
+    }
+</script>
+
 </html>

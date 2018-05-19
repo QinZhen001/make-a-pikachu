@@ -40,11 +40,12 @@ body {
 }
 
 .actions {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     position: absolute;
     right: 0;
     top: 0;
-    display: flex;
-    flex-direction: column;
 }
 
 .actions > button {
@@ -64,6 +65,17 @@ body {
     outline: none;
 }
 
+.actions > img{
+    margin-top: 5px;
+    animation: imgRotate 8s infinite linear;
+    animation-play-state: running;
+}
+
+.actions > img.pause{
+    animation-play-state: paused;
+}
+
+
 .wrapper {
     width: 100%;
     height: 165px;
@@ -76,4 +88,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+@keyframes imgRotate {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }
