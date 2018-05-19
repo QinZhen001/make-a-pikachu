@@ -1,5 +1,5 @@
 var musicControl = $('#music')[0]
-musicControl.volume = 0.5
+musicControl.volume = 0.3
 
 $('.actions img').click(function () {
     if(musicControl.paused){
